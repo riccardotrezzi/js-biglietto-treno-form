@@ -32,6 +32,9 @@ ticketBtn.addEventListener(
             console.log('discount', discount, typeof discount);
 
             const finalprice = price - discount;
+
+            const resultPrice = document.getElementById('result-price');
+            resultPrice.innerHTML = price.toFixed(2);
         }
         else if (NumberAge > 65){
             const price = NumberKm * 0.21;
@@ -41,6 +44,9 @@ ticketBtn.addEventListener(
             console.log('discount', discount, typeof discount);
 
             const finalprice = price - discount;
+
+            const resultPrice = document.getElementById('result-price');
+            resultPrice.innerHTML = price.toFixed(2);
         }
         else {
             const price = NumberKm * 0.21;
