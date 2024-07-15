@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>JS Biglietto Treno</title>
 
         <!--CSS-->
         <link rel="stylesheet" href="css/style.css">
@@ -12,6 +12,10 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
         <!--Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
         <!--FontAwesome CDN-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,17 +26,104 @@
         
         <!--HEADER-->
         <header>
-            
+            <div class="row">
+                <!--NavBar-->
+                <nav class="navbar navbar-expand-lg p-3 rounded-1 shadow" style="background-color: white;">
+                    <div class="container-fluid">
+
+                        <div class="col-2">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#">
+                                    <img id="logo-trainline" src="img/trainline-mint.svg" alt="Logo Trainline">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-10 d-flex">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                                    <ul class="navbar-nav align-items-center">
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="#">Carrello</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="#">Le mie prenotazioni</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="#">Registrati</a>
+                                        </li>
+                                        <li id="button-user" class="nav-item">
+                                            <a class="nav-link" href="#">
+                                                <span>Accedi</span>
+                                                <i class="fa-solid fa-user"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                    
+                        </div>
+                        
+                    </div>
+                </nav>
+
+            </div>
+                
         </header>
+
         <!--MAIN-->
         <main>
 
-        </main>
-        <!--FOOTER-->
-        <footer>
+            <div class="my-card">
 
-        </footer>
+                <!--Nome e Cognome-->
+                <div class="my-small-flex-container">
+                    <label for="Name">Indica il Nome e Cognome</label>
+                    <div>
+                        <input type="text" name="Name" id="Name" placeholder="Inserisci Nome e Cognome">
+                    </div>
+                </div>
+
+                <!--KM-->
+                <div class="my-small-flex-container">
+                    <label for="Km">Indica quanti km devi fare</label>
+                    <div>
+                        <input type="number" name="Km" id="Km" placeholder="Indica Km da percorrere">
+                    </div>
+                </div>
+
+                <!--Age-->
+                <div class="my-small-flex-container">
+                    <label for="age">Indica la tua età</label>
+                    <div>
+                        <input type="number" name="age" id="age" placeholder="Indica la tua età">
+                    </div>
+                </div>
+
+                <!--Button-->
+                <div class="my-small-flex-container">
+                    
+                    <button id="ticket-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Calcola prezzo biglietto</button>
+
+                    <!--OFFCANVAS-->
+
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body small">
+                            Il prezzo del tuo biglietto è di: €<span id="result-price"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </main>
         
+
         <!--LINK SCRIPT JS-->
         <script type="text/javascript" src="js/scripts.js"></script>
 
